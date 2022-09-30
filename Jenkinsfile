@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('vcs') {
             steps {
-                git branch: 'https://github.com/srvarri/openmrs-core.git'
+                git branch: 'REL_INT_1.0', url:'https://github.com/srvarri/openmrs-core.git'
             }
 
         }
