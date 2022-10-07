@@ -1,5 +1,5 @@
 pipeline {
-    agent  { label 'OPENJDK11' }
+    agent  { label 'JDK11' }
     stages {
         stage('vcs') {
             steps {
@@ -17,3 +17,10 @@ pipeline {
                 junit '**/surefire-reports/*.xml'
             }
         }
+		stage ( 'artifacts') {
+            steps {
+                archiveArtifacts artifacts: '**/target/*.jar'
+            }
+		}
+    }    
+}    
