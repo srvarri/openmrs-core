@@ -12,9 +12,9 @@ pipeline {
                 sh '/usr/share/maven/bin/mvn package'
             }
         }
-        stage('archive results') {
+        stage('build') {
             steps {
-                junit '**/surefire-reports/*.xml'
+                sh '/usr/share/maven/bin/mvn package'
             }
         }
 		stage ( 'artifacts') {
